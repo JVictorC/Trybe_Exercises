@@ -1,5 +1,7 @@
 # Trybe_Exercises
 
-Neste Portifólio você irá conseguir ver a minha evolução durante o meu curo na trybe.
+Neste Portifólio tem toda minha jornada durante a minha primeira formação, e espero que de muitas, na aréa de Developer, você irá conseguir ver a minha evolução durante o meu dia com exercio ate o meu ultimo exercício do curso na Trybe.
 
 #Logo mais Atualizou com mais informações o Readme
+#VQV #goTrybe
+
