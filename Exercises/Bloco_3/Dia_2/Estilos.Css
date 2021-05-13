@@ -1,0 +1,22 @@
+
+        h1{
+            font-family: sans-serif;
+            
+        }
+            
+        p{
+            font-weight:600;
+            line-height: 3em;
+            font-size: 22px;
+           
+        }  
+         
+        body{
+            font-size: 16px;
+
+        }
+        ul{
+            font-size: 20px;
+            line-height: 2;
+            text-decoration: underline;
+        }
