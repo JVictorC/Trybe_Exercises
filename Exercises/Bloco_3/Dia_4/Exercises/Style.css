@@ -35,6 +35,13 @@ body {
   margin: 0px 15px;
 }
 
+#Nav a li:hover{
+    background-color: rgb(74, 74, 241);
+    color: white;
+    margin: 15px;
+    font-size: 35px;
+}
+
 p {
   font-size: 30px;
   margin: 15px;
