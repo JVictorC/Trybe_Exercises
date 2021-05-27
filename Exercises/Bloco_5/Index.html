@@ -65,14 +65,17 @@
       h1.innerText = "Exercício 5.2 - JavaScript";
       body.appendChild(h1);
       //2
-      let mainContent = document.createElement('div')
-      mainContent.className = 'main-content'
-      body.appendChild(mainContent)
+      let mainContent = document.createElement("div");
+      mainContent.className = "main-content";
+      body.appendChild(mainContent);
       //3
-      let mainContentSon = document.createElement('div');
-      mainContentSon.className = 'main-content'
-      mainContent.appendChild(mainContentSon)
-      
+      let mainContentSon = document.createElement("div");
+      mainContentSon.className = "main-content";
+      mainContent.appendChild(mainContentSon);
+      //4
+      let tagPSon = document.createElement("p");
+      tagPSon.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu, hendrerit eu metus sit amet turpis.";
+        mainContentSon.appendChild(tagPSon)
       console.log(body);
     </script>
   </body>
