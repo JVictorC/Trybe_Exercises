@@ -94,13 +94,19 @@
       //8
       let uList = document.createElement("ul");
       divRigthContetn.appendChild(uList);
-      for (let i = 1; i <= 10; i += 1){
-          let numero = i
-          let list = document.createElement("li");
-          list.innerText = numero;
-          uList.appendChild((list)); 
+      for (let i = 1; i <= 10; i += 1) {
+        let numero = i;
+        let list = document.createElement("li");
+        list.innerText = numero;
+        uList.appendChild(list);
       }
-      
+      //9
+      for (let i = 1; i <= 3; i += 1) {
+          text = 'Lorem ipsum dolor sit amet, consectetur';
+          let h3 = document.createElement('h3')
+          h3.innerText = text
+          mainContent.appendChild(h3)
+      }
     </script>
   </body>
 </html>
