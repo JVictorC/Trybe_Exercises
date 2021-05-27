@@ -58,14 +58,18 @@
   <body>
     <script>
       // COLOQUE SEU CÓDIGO AQUI
-      let h1 = document.createElement('h1');
-      h1.innerText = 'Exercício 5.2 - JavaScript'
-      let body = document.body
-      body.appendChild(h1)
-
-      console.log(body)
-
+      //Varivael para o Body
+      let body = document.body;
+      // 1
+      let h1 = document.createElement("h1");
+      h1.innerText = "Exercício 5.2 - JavaScript";
+      body.appendChild(h1);
+      //2
+      let mainContent = document.createElement('div')
+      mainContent.className = 'main-content'
+      body.appendChild(mainContent)
       
+      console.log(body);
     </script>
   </body>
 </html>
