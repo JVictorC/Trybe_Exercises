@@ -74,9 +74,14 @@
       mainContent.appendChild(mainContentSon);
       //4
       let tagPSon = document.createElement("p");
-      tagPSon.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu, hendrerit eu metus sit amet turpis.";
-        mainContentSon.appendChild(tagPSon)
+      tagPSon.innerText =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui arcu, hendrerit eu metus sit amet turpis.";
+      mainContentSon.appendChild(tagPSon);
       console.log(body);
+      //5
+      let divLeftContent = document.createElement('div');
+      divLeftContent.className = 'left-content'
+      mainContent.appendChild(divLeftContent)
     </script>
   </body>
 </html>
