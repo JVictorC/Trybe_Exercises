@@ -49,14 +49,38 @@ function dayMonth() {
 }
 // Exercicio 2
 
-function createButtun(){
+function createButtun() {
   let paiBotao = document.querySelector('.buttons-container');
   let botao = document.createElement('button');
   botao.innerText = 'Feriados';
   botao.id = 'btn-holiday'
   paiBotao.appendChild(botao);
-  
-  console.log(paiBotao);
+}
+
+// Exercicio 3
+
+window.onload = function () {
+  let butao = document.querySelector('#btn-holiday')
+
+  butao.addEventListener('click', activatedButton)
+
+}
+
+
+
+function activatedButton() {
+  let classHolidays = document.getElementsByClassName('holidays')
+  let background = document.getElementsByClassName('holidays')[0].style.background
+  if (background == 'white') {
+    for (let i = 0; i < classHolidays.length; i += 1) {
+      classHolidays[i].style.background = 'rgb(238,238,238)';
+    }
+  } else {
+    for (let i = 0; i < classHolidays.length; i += 1) {
+      classHolidays[i].style.background = 'white';
+    }
+  }
+
 
 }
 
