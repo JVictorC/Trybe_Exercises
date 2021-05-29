@@ -49,15 +49,13 @@ function dayMonth() {
 }
 // Exercicio 2
 
-function createButtun() {
+function createButtunHoliday() {
   let paiBotao = document.querySelector('.buttons-container');
   let botao = document.createElement('button');
   botao.innerText = 'Feriados';
   botao.id = 'btn-holiday'
   paiBotao.appendChild(botao);
 }
-
-// Exercicio 3
 
 window.onload = function () {
   let butao = document.querySelector('#btn-holiday')
@@ -66,7 +64,7 @@ window.onload = function () {
 
 }
 
-
+// Exercicio 3
 
 function activatedButton() {
   let classHolidays = document.getElementsByClassName('holidays')
@@ -80,14 +78,25 @@ function activatedButton() {
       classHolidays[i].style.background = 'white';
     }
   }
-
-
 }
 
+
+// Exercicio 4
+
+function createButtonFriday(){
+  let paiButton = document.querySelector('.buttons-container')
+  let buttonFriday = document.createElement('button')
+  buttonFriday.id = 'btn-friday';
+  buttonFriday.innerText = 'Sexta-Feira'
+  paiButton.appendChild(buttonFriday)
+  console.log(paiButton)
+}
+
+
+
 dayMonth();
-
-createButtun();
-
+createButtunHoliday();
+createButtonFriday()
 
 
 
