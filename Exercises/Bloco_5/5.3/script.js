@@ -47,9 +47,22 @@ function dayMonth() {
     daysList.appendChild(li)
   }
 }
+// Exercicio 2
 
+function createButtun(){
+  let paiBotao = document.querySelector('.buttons-container');
+  let botao = document.createElement('button');
+  botao.innerText = 'Feriados';
+  botao.id = 'btn-holiday'
+  paiBotao.appendChild(botao);
+  
+  console.log(paiBotao);
+
+}
 
 dayMonth();
+
+createButtun();
 
 
 
