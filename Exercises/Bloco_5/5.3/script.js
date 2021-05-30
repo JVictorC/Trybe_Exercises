@@ -74,6 +74,7 @@ window.onload = function () {
   botaoFriday.addEventListener('click', activatedButtonFriday)
 
   adicionarTarefa('Projetos:');
+  legenda('Green');
 
 }
 
@@ -123,10 +124,20 @@ function adicionarTarefa(tarefa){
   let li = document.createElement('li')
   elementPai.appendChild(span)
   span.innerText = tarefa;
-  console.log(elementPai);
+
 
 }
 
+// Exercicio 8
+
+ function legenda (cor){
+  let elementPai = document.getElementsByClassName('my-tasks')[0];
+  let div = document.createElement('div');
+  console.log(elementPai);
+  elementPai.appendChild(div)
+  div.id = 'my-tasks'
+  div.style.backgroundColor = cor
+ }
 
 
 
