@@ -73,6 +73,7 @@ window.onload = function () {
   botaoHolidays.addEventListener('click', activatedButtonHoliday)
   botaoFriday.addEventListener('click', activatedButtonFriday)
 
+  adicionarTarefa('Projetos:');
 
 }
 
@@ -91,6 +92,8 @@ function activatedButtonHoliday() {
     }
   }
 }
+
+// Exercicio 5
 
 function activatedButtonFriday() {
   let classFridays = document.getElementsByClassName('friday');
@@ -111,7 +114,18 @@ function activatedButtonFriday() {
   }
 }
 
+// Exercicio 7
 
+function adicionarTarefa(tarefa){
+  let elementPai = document.getElementsByClassName('my-tasks')[0];
+  let span = document.createElement('span')
+  let ul = document.createElement('ul')
+  let li = document.createElement('li')
+  elementPai.appendChild(span)
+  span.innerText = tarefa;
+  console.log(elementPai);
+
+}
 
 
 
