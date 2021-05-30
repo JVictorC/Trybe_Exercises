@@ -57,18 +57,30 @@ function createButtunHoliday() {
   paiBotao.appendChild(botao);
 }
 
-window.onload = function () {
-  let butao = document.querySelector('#btn-holiday')
+// Exercicio 4
+function createButtonFriday() {
+  let paiButton = document.querySelector('.buttons-container')
+  let buttonFriday = document.createElement('button')
+  buttonFriday.id = 'btn-friday';
+  buttonFriday.innerText = 'Sexta-Feira'
+  paiButton.appendChild(buttonFriday)
+}
 
-  butao.addEventListener('click', activatedButton)
+window.onload = function () {
+  let botaoHolidays = document.querySelector('#btn-holiday')
+  let botaoFriday = document.querySelector('#btn-friday')
+
+  botaoHolidays.addEventListener('click', activatedButtonHoliday)
+  botaoFriday.addEventListener('click', activatedButtonFriday)
+
 
 }
 
 // Exercicio 3
 
-function activatedButton() {
+function activatedButtonHoliday() {
   let classHolidays = document.getElementsByClassName('holidays')
-  let background = document.getElementsByClassName('holidays')[0].style.background
+  let background = classHolidays[0].style.background
   if (background == 'white') {
     for (let i = 0; i < classHolidays.length; i += 1) {
       classHolidays[i].style.background = 'rgb(238,238,238)';
@@ -80,17 +92,27 @@ function activatedButton() {
   }
 }
 
+function activatedButtonFriday() {
+  let classFridays = document.getElementsByClassName('friday');
+  let color = classFridays[0].style.color
+  if (color === 'green') {
+    for (let i = 0; i < classFridays.length; i += 1) {
+      const friday = [4, 11, 18, 25];
+      classFridays[i].innerText = friday[i];
+      classFridays[i].style.color = '#777'
+    }
 
-// Exercicio 4
+  } else {
+    for (let i = 0; i < classFridays.length; i += 1) {
+      classFridays[i].innerText = 'SEXTOU';
+      classFridays[i].style.color = 'green'
+    }
 
-function createButtonFriday(){
-  let paiButton = document.querySelector('.buttons-container')
-  let buttonFriday = document.createElement('button')
-  buttonFriday.id = 'btn-friday';
-  buttonFriday.innerText = 'Sexta-Feira'
-  paiButton.appendChild(buttonFriday)
-  console.log(paiButton)
+  }
 }
+
+
+
 
 
 
