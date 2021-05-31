@@ -78,7 +78,7 @@ window.onload = function () {
 
   let myTaskDiv = document.querySelector('#my-tasks');
   myTaskDiv.addEventListener('click', tarefaSelection)
-
+  myTaskDiv.className = 'task'
  
 }
 
@@ -119,6 +119,16 @@ function activatedButtonFriday() {
   }
 }
 
+// Exercicio 6
+
+function onMouseOver(event) {
+  event.target.style.fontSize = '25px'
+}
+
+function onMouseOut(event){
+  event.target.style.fontSize = '20px'
+}
+
 // Exercicio 7
 
 function adicionarTarefa(tarefa) {
@@ -145,25 +155,33 @@ function legenda(cor) {
 // Exercicio 9
 
 function tarefaSelection() {
+  let paiLists = document.getElementById('days')
   let myTaskDiv = document.querySelector('#my-tasks');
   if (myTaskDiv.className === 'task selected') {
-    myTaskDiv.className = 'task';
-    console.log(myTaskDiv.className);
+      myTaskDiv.className = 'task';
+      console.log(myTaskDiv.className);
+      console.log(myTaskDiv);
   } else {
     myTaskDiv.className = 'task selected'
     console.log(myTaskDiv.className);
+    console.log(myTaskDiv);
+
   }
-
-  console.log(myTaskDiv)
 }
 
-function onMouseOver(event) {
-  event.target.style.fontSize = '25px'
+// Exercicio 10
+
+function onClick (event){
+  let DivTasks = document.getElementById('my-tasks')
+  let className = DivTasks.className
+  if(className === 'task'){
+    event.target.style.color = '#777'
+
+  } else {
+    event.target.style.color = 'green'
+  }
 }
 
-function onMouseOut(event){
-  event.target.style.fontSize = '20px'
-}
 
 dayMonth();
 createButtunHoliday();
