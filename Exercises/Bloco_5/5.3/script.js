@@ -77,11 +77,9 @@ window.onload = function () {
   legenda('Green');
 
   let myTaskDiv = document.querySelector('#my-tasks');
-  let myTaskDivBackground = myTaskDiv.style.backgroundColor;
-
-
   myTaskDiv.addEventListener('click', tarefaSelection)
 
+ 
 }
 
 // Exercicio 3
@@ -157,6 +155,14 @@ function tarefaSelection() {
   }
 
   console.log(myTaskDiv)
+}
+
+function onMouseOver(event) {
+  event.target.style.fontSize = '25px'
+}
+
+function onMouseOut(event){
+  event.target.style.fontSize = '20px'
 }
 
 dayMonth();
