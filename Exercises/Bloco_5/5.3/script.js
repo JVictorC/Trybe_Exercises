@@ -76,6 +76,12 @@ window.onload = function () {
   adicionarTarefa('Projetos:');
   legenda('Green');
 
+  let myTaskDiv = document.querySelector('#my-tasks');
+  let myTaskDivBackground = myTaskDiv.style.backgroundColor;
+
+
+  myTaskDiv.addEventListener('click', tarefaSelection)
+
 }
 
 // Exercicio 3
@@ -117,7 +123,7 @@ function activatedButtonFriday() {
 
 // Exercicio 7
 
-function adicionarTarefa(tarefa){
+function adicionarTarefa(tarefa) {
   let elementPai = document.getElementsByClassName('my-tasks')[0];
   let span = document.createElement('span')
   let ul = document.createElement('ul')
@@ -130,16 +136,28 @@ function adicionarTarefa(tarefa){
 
 // Exercicio 8
 
- function legenda (cor){
+function legenda(cor) {
   let elementPai = document.getElementsByClassName('my-tasks')[0];
   let div = document.createElement('div');
-  console.log(elementPai);
   elementPai.appendChild(div)
   div.id = 'my-tasks'
   div.style.backgroundColor = cor
- }
+}
 
+// Exercicio 9
 
+function tarefaSelection() {
+  let myTaskDiv = document.querySelector('#my-tasks');
+  if (myTaskDiv.className === 'task selected') {
+    myTaskDiv.className = 'task';
+    console.log(myTaskDiv.className);
+  } else {
+    myTaskDiv.className = 'task selected'
+    console.log(myTaskDiv.className);
+  }
+
+  console.log(myTaskDiv)
+}
 
 dayMonth();
 createButtunHoliday();
