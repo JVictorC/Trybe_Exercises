@@ -72,14 +72,26 @@ window.onload = function () {
 
   botaoHolidays.addEventListener('click', activatedButtonHoliday)
   botaoFriday.addEventListener('click', activatedButtonFriday)
-
   adicionarTarefa('Projetos:');
   legenda('Green');
 
+  //Class task para os projetos
   let myTaskDiv = document.querySelector('#my-tasks');
   myTaskDiv.addEventListener('click', tarefaSelection)
   myTaskDiv.className = 'task'
  
+  // Listener para os dias
+  let divDay = document.getElementById('days');
+  divDay.addEventListener('mouseover', onMouseOver)
+  divDay.addEventListener('mouseout', onMouseOut)
+  divDay.addEventListener('click', onClick)
+
+  //Compromissos
+
+  let buttonAdicionar = document.getElementById('btn-add');
+  let imput = document.getElementById('task-input');
+  buttonAdicionar.addEventListener('click', tarefas)
+  imput.addEventListener('keypress', keyEnter)
 }
 
 // Exercicio 3
@@ -159,12 +171,8 @@ function tarefaSelection() {
   let myTaskDiv = document.querySelector('#my-tasks');
   if (myTaskDiv.className === 'task selected') {
       myTaskDiv.className = 'task';
-      console.log(myTaskDiv.className);
-      console.log(myTaskDiv);
   } else {
     myTaskDiv.className = 'task selected'
-    console.log(myTaskDiv.className);
-    console.log(myTaskDiv);
 
   }
 }
@@ -182,6 +190,28 @@ function onClick (event){
   }
 }
 
+// Bonus
+
+function tarefas(){
+  let paiDiv = document.querySelector('.task-list')
+  let li = document.createElement('li')
+  let imput = document.getElementById('task-input')
+  if (imput === ''){
+    alert('Por Gentileza adicionar texto no campo: Escreva seu compromisso')
+  } else {
+    li.innerText = imput.value
+    paiDiv.appendChild(li)
+    imput.value = "";d
+  }
+  
+
+}
+
+function keyEnter (event){
+  if (event.keyCode === 13){
+    tarefas()
+  }
+}
 
 dayMonth();
 createButtunHoliday();
