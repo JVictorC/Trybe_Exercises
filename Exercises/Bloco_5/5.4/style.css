@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 90%;
+    font-family:'Montserrat';
+    font-size: 1em;
+    margin: 10px auto;
+    background: white;
+    letter-spacing: -1;
+
+}
+/*Header*/
+#header{
+    background: #f9a825;
+    text-align: center;
+}
+
+#logo{
+    font-size: 25px;
+    color: #455a64;
+    font-size: 30px;
+    
+}
+.branco{
+    color: white;
+    font-size: 25px;
+
+}
+/*Menu*/
+#menu{
+    color: #455a64;
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: #455a64;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+   
+}
+
+#sectionLeft{
+    float: left;
+    width: 60%;
+    height: 350px;
+    background: #eeeeee;
+    margin:25px 5px; 
+    border: 2px dotted black;
+}
+
+h1{
+    margin: 15px auto;
+    text-align: center;
+    color: #455a64;
+}
+
+.artigo{
+    margin: 15px;
+    color: black;
+}
+
+#teste{
+width: 300px;
+}
+
+.input{
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+button{
+    display: inline-block;
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 5%;
+    color: white;
+    background-color: #455a64;
+}
+
+button:hover{
+    display: inline-block;
+    padding: 6px;
+    border: 1px solid black;
+    border-radius: 5%;
+    color: #455a64;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: white;
+
+}
+#sectionRight{
+    float: right;
+    margin-top:25px; 
+    background: #eeeeee;
+    margin: 25px 5px;
+    width: 35%;
+    border: 2px dotted black;
+    height: 350px;
+    line-height: 25px;
+
+   
+}
+
+h5{
+    margin: 5px;
+    
+}
+
+#footer{
+    clear: both;
+    background-color: #f9a825;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #455a64;
+    font-size: 20px;
+
+}
+
+.color{
+    border: 1px solid black;
+    border-radius: 100%;
+    border-top-left-radius: 1%;
+    width: 35px;
+    height: 35px;
+    margin: 10px;
+}
+
+.color:hover{
+    border: 1px solid black;
+    border-radius: 100%;
+    border-top-left-radius: 1%;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+}
+
+
+.font{
+    border: 1px solid black;
+    border-radius: 20%;
+    border-top-left-radius: 1%;
+    width: 70px;
+    height: 25px;
+    margin: 10px;
+    padding: 5px;
+    font-style: italic;
+    font-size: 0.7em;
+    text-align: center;
+    background-color: #455a64;
+    color: white;
+    font-weight: 700;
+
+
+}
+
+.font:hover{
+    border: 1px solid black;
+    border-radius: 20%;
+    border-top-left-radius: 1%;
+    width: 80px;
+    height: 35px;
+    margin: 10px;
+    padding: 5px;
+    font-style: italic;
+    font-size: 0.7em;
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+    color: #455a64;
+    font-weight: 700;
+}
