@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+#dados-pessoais{
+  text-align: center;
+}
+
+.line-content{
+  margin: 20px;
+
+}
