@@ -1,0 +1,17 @@
+.btn-center {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.btn-danger:hover {
+  background-color: white;
+  color: red;
+  font-weight: 600;
+}
+
+.btn-success:hover {
+  background-color: white;
+  color: green;
+  font-weight: 600;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise Bloco 6.1</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!-- Link PikaDay -->
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <!-- Link CSS Proprio -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <p class="display-3 text-center">Formulario de Aprensetação</p>
+    <p class="reload text-center">Neste Formulario, informe alguns dados de extrema importancia para seguir nosso processo.</p>
+    <main id="main">
+      <form action="" method="GET" >
+        <div class="container">
+          <p class="display-6">Dados Pessoais:</p>
+          <div class="my-3">
+            <label for="name" class="form-label">Nome:</label>
+            <input class="form-control" type="text" maxlength="40" id="name" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="email">Email:</label>
+            <input class="form-control" type="text" maxlength="50" id="email" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="cpf class="form-label"">CPF:</label>
+            <input class="form-control" type="text" maxlength="11" id="cpf" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="endereço">Endereço:</label>
+            <input class="form-control" type="text" maxlength="200" id="endereço" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="cidade">Cidade:</label>
+            <input class="form-control" type="text" maxlength="28" id="cidade" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="estados">Estado:</label>
+            <select class="form-select" name="" id="states" required></select>
+          </div>
+        </div>
+
+        <!-- Fim Dados Pessoais -->
+        <div class="container my-5">
+          <p class="display-6">Dados Sobre a ultima Experiencia:</p>
+          <div class="my-3">
+            <label class="form-label" for="resumo-cv">Resumo Currículo:</label>
+            <textarea
+             class="form-control"
+              name=""
+              id="resumo-cv"
+              cols="30"
+              rows="10"
+              maxlength="1000"
+              required
+            ></textarea>
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="cargo">Cargo:</label>
+            <input class="form-control" type="text" id="cargo" maxlength="500" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="descrição-cargo">Descrição do Cargo</label>
+            <input class="form-control" type="text" id="descrição-cargo" maxlength="500" required />
+          </div>
+          <div class="my-3">
+            <label class="form-label" for="datepicker">Data de Inicio:</label>
+            <input class="form-control" type="text" id="datepicker" required >
+          </div>
+        </div>
+        <div class="my-3 container btn-center">
+          <button class="btn btn-success">Criar Div</button>
+          <button type="reset" class="btn btn-danger mx-5">Apagar tudo</button>
+        </div>
+      </form>
+      <section id="information"></section>
+      <script src="script.js"></script>
+    </main>
+    <script>
+      let picker = new Pikaday({
+          field: document.getElementById('datepicker'),
+          format: 'D/M/YYYY',
+          toString(date, format) {
+              // you should do formatting based on the passed format,
+              // but we will just return 'D/M/YYYY' for simplicity
+              const day = date.getDate();
+              const month = date.getMonth() + 1;
+              const year = date.getFullYear();
+              return `${day}/${month}/${year}`;
+          },
+          parse(dateString, format) {
+              // dateString is the result of `toString` method
+              const parts = dateString.split('/');
+              const day = parseInt(parts[0], 10);
+              const month = parseInt(parts[1], 10) - 1;
+              const year = parseInt(parts[2], 10);
+              return new Date(year, month, day);
+          }
+      });
+    </script>
+  </body>
+</html>
