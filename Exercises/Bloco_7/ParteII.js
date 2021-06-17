@@ -39,13 +39,33 @@ Um botão ao qual será associado um event listener ;
 Uma variável clickCount no arquivo JavaScript que acumule o número de clicks no botão;
 Um campo no HTML que vá atualizando a quantidade de clicks no botão conforme a variável clickCount é atualizada. */
 
-window.onload = () => {
-  let counter = document.getElementById('resultado')
-  const btnClick = document.getElementById('button')
-  btnClick.addEventListener('click', () => {
-    value = parseInt(counter.innerText);
-    value += 1
-    counter.innerText = value;
-  })
+// window.onload = () => {
+//   let counter = document.getElementById('resultado')
+//   const btnClick = document.getElementById('button')
+//   btnClick.addEventListener('click', () => {
+//     value = parseInt(counter.innerText);
+//     value += 1
+//     counter.innerText = value;
+//   })
+// }
+
+const stringX = (word, word2) => {
+  word = word.split('');
+  for (let i = 0;i < word.length; i+= 1) {
+    word[i] = (word[i] === 'x') ? word2 : word[i];
+  }
+  word = word.join('');
+  console.log(word);
 }
 
+stringX("Tryber x aqui!","Bebeto")
+
+let skills = ['Js', 'Css', 'HTML', 'Dom', 'BootStrap']
+const fiveSkills = (array) => {
+  for (let i of array) {
+    console.log(i);
+  }
+  console.log('#goTrybe');
+}
+
+fiveSkills(skills);
