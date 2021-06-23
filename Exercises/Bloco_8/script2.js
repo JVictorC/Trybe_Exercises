@@ -1,6 +1,5 @@
-const prizeDraw = (number, callBack) => {
- return (number === callBack()) ? "Parabéns você ganhou" : "Tente novamente";
-}
+const prizeDraw = (number, callBack) => (number === callBack()) ? "Parabéns você ganhou" : "Tente novamente";
+
 
 const gerenateNumberRandom = () => {
   const randomNumber = Math.floor(Math.random() * 5) + 1
