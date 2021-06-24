@@ -65,20 +65,11 @@ const books = [
 
 // Adicione o código do exercício aqui:
 
-const expectedResult = {
-  author: {
-    birthYear: 1948,
-    name: 'George R. R. Martin',
-  },
-  genre: 'Fantasia',
-  id: 1,
-  name: 'As Crônicas de Gelo e Fogo',
-  releaseYear: 1991,
-};
+const expectedResult = false;
 
-function getNamedBook() {
-  // escreva seu código aquis
- return books.find((object) => object.name.length === 26)
+function everyoneWasBornOnSecXX() {
+  // escreva seu código aqui
+  return books.every((objc) => objc.author.birthYear >= 1901 && objc.author.birthYear <= 2000)
 }
 
-assert.deepStrictEqual(getNamedBook(), expectedResult);
+assert.strictEqual(everyoneWasBornOnSecXX(), expectedResult);
