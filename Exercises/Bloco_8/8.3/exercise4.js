@@ -27,12 +27,8 @@ const expectedResult = [
 
 function oldBooksOrdered() {
   // escreva seu código aqui
-  const booksMoreOld60 = books.filter((book) => {
-    return 2021 - book.releaseYear > 60
-  })
-  booksMoreOld60.sort((value1, value2) => { 
-   return value1.releaseYear - value2.releaseYear
-  })
+  const booksMoreOld60 = books.filter((book) => 2021 - book.releaseYear > 60)
+  booksMoreOld60.sort((value1, value2) => value1.releaseYear - value2.releaseYear)
   return booksMoreOld60;
 }
 
