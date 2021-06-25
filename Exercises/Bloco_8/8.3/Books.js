@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 const books = [
   {
     id: 1,
@@ -64,5 +62,4 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-module.exports = assert
 module.exports = books
