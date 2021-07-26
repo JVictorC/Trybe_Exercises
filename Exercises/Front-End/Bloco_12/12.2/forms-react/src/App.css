@@ -1,0 +1,34 @@
+body{
+  background-color: #303030 
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.App form fieldset {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 15px;
+}
+
+.inputText {
+  margin: 25px;
+}
+
+label {
+  color: white;
+  margin: 0 5px;
+}
+
+select {
+  background-color: #818181;
+  margin: 0 10px;
+}
+
+input {
+  margin: 15px;
+  background-color: #818181;
+}
