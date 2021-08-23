@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      height: 50px;
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <p>Color: <span id="value">white</span></p>
+    <button id="previous">Previous color</button>
+    <button id="next">Next color</button>
+    <button id="random">Random Color</button>
+  </div>
+  <script>
+    window.onload = () => {
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+      const NEXT_COLOR = 'NEXT_COLOR'
+      const PREVIOUS_COLOR = 'PREVIUS-COLOR'
+      const RANDOM_COLOR = 'RANDOM_COLOR'
+
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          case NEXT_COLOR:
+            return {
+              ...state, index: (state.index < state.colors.length - 1 ? state.index += 1 : 0)
+            }
+            break;
+          case PREVIOUS_COLOR:
+            return {
+              ...state, index: (state.index > 0 ? state.index -= 1 : 0)
+            }
+            break;
+            case RANDOM_COLOR:
+              return {
+                ...state, index: Math.floor(Math.random() * 5) + 1
+              } 
+            break;
+          default:
+            return state
+            break;
+        }
+      }
+      const store = Redux.createStore(reducer)
+      
+      store.subscribe(() => {
+        const {colors, index} = store.getState()
+        const targertValue = document.querySelector('#value').innerHTML = colors[index]
+      })
+
+      const buttonNext = document.querySelector('#next').addEventListener('click', () => store.dispatch({type: NEXT_COLOR}))
+      const buttonPrevious = document.querySelector('#previous').addEventListener('click', () => store.dispatch({type: PREVIOUS_COLOR}))
+      const buttonRandom = document.querySelector('#random').addEventListener('click', () => store.dispatch({type: RANDOM_COLOR}))
+      
+    }
+  </script>
+</body>
+
+</html>
