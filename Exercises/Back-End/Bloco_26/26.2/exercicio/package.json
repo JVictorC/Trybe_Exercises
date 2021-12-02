@@ -1,0 +1,23 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exec1": "node exercicio1.js",
+    "exec2": "node exercicio2.js",
+    "exec3": "node exercicio3.js",
+    "exec4": "node exercicio4.js",
+    "exec5": "node exercicio5.js",
+    "exec6": "node exercicio6.js",
+    "exec7": "node exercicio7.js",
+    "exec8": "node exercicio8.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
