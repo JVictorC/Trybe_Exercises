@@ -1,14 +1,29 @@
 const express = require('express');
+const userRouter = require('./routes/users');
+const btcRouter = require('./routes/btc');
+const postsRouter = require('./routes/posts');
+const teamsRouter = require('./routes/teams');
+const errorMiddleWare = require('./middleWares/error.middleware');
+
 const app = express();
-const port = 3012;
-const bodyParser = require('body-parser');
-const RegisterMiddleWare = require('./middleWares/login.middleware');
-const VerificationRegister = require('./middleWares/verificationLogin.middleware');
+const port = 3000;
 
-app.use(bodyParser.json())
+app.use(express.json())
 
-app.listen(port, () => console.log(`Estou rodando na porta ${port}`))
+app.use('/user', userRouter)
 
-app
-  .route('/user/register')
-  .post(VerificationRegister, RegisterMiddleWare)
+app.use('/btc', btcRouter)
+
+app.use('/posts', postsRouter)
+
+app.use('/teams', teamsRouter)
+
+app.all('*', (req,res) => {
+  res.status(404).json({message: 'Page Not Found'})
+})
+
+app.use(errorMiddleWare)
+
+app.listen(port, () => {
+  console.log(`Estou rodando na porta ${port}`)
+});
