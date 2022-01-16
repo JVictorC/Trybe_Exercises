@@ -1,8 +1,19 @@
 
 import Joi from '@hapi/joi';
-import bodyRequest from '../interfaces/bodyLogin';
-import { createUser, findUser } from '../models/Login';
+import {bodyRequest, bodyRequestByUpdate} from '../interfaces/bodyLogin';
+import { createUser, findUser, updateUserByName } from '../models/Login';
 import { genToken } from './AuthService';
+
+const verifiedBodyByUpdate = (bodyRequest: bodyRequestByUpdate) => {
+  const { error } = Joi.object({
+    username: Joi.string().min(5).required(),
+    password: Joi.string().min(5).required(),
+    newUsername: Joi.string().min(5).required(),
+    newPassword: Joi.string().min(5).required(),
+  }).validate(bodyRequest);
+
+  return error;
+};
 
 const verifiedBody = (bodyRequest: bodyRequest) => {
   const { error } = Joi.object({
@@ -34,10 +45,12 @@ export const loginService = async (bodyRequest: bodyRequest) => {
 
 
   if(!user) throw { code: 401, message: 'Usuário não existe ou senha inválida' };
+
   const validations = [
     user.password !== bodyRequest.password,
     user.username !== bodyRequest. username
   ];
+
   if(validations.includes(true)) {
     throw { code: 401, message: 'Usuário não existe ou senha inválida' };
   }
@@ -54,3 +67,32 @@ export const loginService = async (bodyRequest: bodyRequest) => {
     token
   }
 };
+
+export const updateUserService = async (bodyRequest: bodyRequestByUpdate) => {
+  const hasError = verifiedBodyByUpdate(bodyRequest);
+
+  if(hasError) throw {code: 400, message: hasError.message}
+
+  const user = await findUser(bodyRequest);
+
+
+  if(!user) throw { code: 401, message: 'Usuário não existe ou senha inválida' };
+  
+  const validations = [
+    user.password !== bodyRequest.password,
+    user.username !== bodyRequest. username
+  ];
+
+  if(validations.includes(true)) {
+    throw { code: 401, message: 'Usuário não existe ou senha inválida' };
+  }
+
+  const response = await updateUserByName(bodyRequest);
+  console.log(response);
+
+
+  return {
+    message: 'Success',
+    ...bodyRequest
+  }
+}
