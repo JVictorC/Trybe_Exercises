@@ -1,0 +1,10 @@
+O que vou aprender na Trybe:
+
+-Unix
+-Bash
+-Git
+-Softskill
+-Java Script
+-HTML
+-CSS
+
